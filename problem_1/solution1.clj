@@ -1,14 +1,12 @@
-(defn is-rem-zero?
-	[dividend divisor]
-	(zero? (rem dividend divisor)))
-
-(defn multiple-of-5?
+(defn is-multiple-of
 	[n]
-	(is-rem-zero? n 5))
+	#(zero? (mod % n)))
 
-(defn multiple-of-3?
-	[n]
-	(is-rem-zero? n 3))
+(def multiple-of-5?
+	(is-multiple-of 5))
+
+(def multiple-of-3?
+	(is-multiple-of 3))
 
 (defn multiple-of-3-or-5?
 	[n]
